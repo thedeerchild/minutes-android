@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,200,100);
 /* line 17, ../../../.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -67,21 +67,64 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 8, ../scss/screen.scss */
 body {
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+  background: url("../img/wavegrid.png") !important;
 }
 
-/* line 1, ../scss/_ui.scss */
-[data-role="page"] {
-  max-width: 1024px;
-  margin: auto;
-  background: url("../img/wavegrid.png");
+/* line 13, ../scss/screen.scss */
+.ui-page[data-role="page"] {
+  width: 100%;
+  max-width: 940px;
+  position: relative;
+}
+@media screen and (min-width: 345px) {
+  /* line 13, ../scss/screen.scss */
+  .ui-page[data-role="page"] {
+    width: 90%;
+    margin: 0 auto;
+    border: 0;
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
 }
 
-/* line 15, ../scss/_ui.scss */
+@media screen and (min-width: 1024px) {
+  /* line 27, ../scss/screen.scss */
+  .ui-mobile-viewport {
+    width: 940px;
+    margin: 0 auto;
+  }
+
+  /* line 31, ../scss/screen.scss */
+  .ui-page {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 1024px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+  }
+}
+/* line 4, ../scss/_ui.scss */
+.ui-header h1.ui-title {
+  text-shadow: none;
+  font-size: 2em;
+  margin: 0;
+  padding: 0.2em;
+  font-weight: 200;
+  min-height: 0;
+}
+
+/* line 14, ../scss/_ui.scss */
 .ui-bar-a {
-  border-color: transparent;
+  border: 0;
   background: #66bfbb;
 }
-/* line 19, ../scss/_ui.scss */
+/* line 18, ../scss/_ui.scss */
+.ui-bar-a.ui-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+/* line 25, ../scss/_ui.scss */
 .ui-bar-a .ui-btn {
   -webkit-transition-property: background;
   -moz-transition-property: background;
@@ -91,12 +134,18 @@ body {
   -moz-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  border-color: transparent;
-  border-radius: 4px;
-  box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.25);
-  background: #409995;
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: #66bfbb;
 }
-/* line 28, ../scss/_ui.scss */
+/* line 33, ../scss/_ui.scss */
 .ui-bar-a .ui-btn:hover {
   background: #317572;
   -webkit-transition-property: background;
@@ -109,38 +158,68 @@ body {
   transition-duration: 0.3s;
 }
 
-/* line 36, ../scss/_ui.scss */
+/* line 44, ../scss/_ui.scss */
+.ui-header .ui-btn-up-a,
+.ui-header .ui-btn-hover-a {
+  height: 100%;
+  width: 3em;
+  top: 0;
+}
+/* line 49, ../scss/_ui.scss */
+.ui-header .ui-btn-up-a.ui-btn.settings-btn,
+.ui-header .ui-btn-hover-a.ui-btn.settings-btn {
+  background: center center url(../img/settings.png) no-repeat;
+  right: 0;
+}
+/* line 52, ../scss/_ui.scss */
+.ui-header .ui-btn-up-a.ui-btn.settings-btn:hover,
+.ui-header .ui-btn-hover-a.ui-btn.settings-btn:hover {
+  background-color: #47aba6;
+}
+/* line 57, ../scss/_ui.scss */
+.ui-header .ui-btn-up-a.ui-btn.back-btn,
+.ui-header .ui-btn-hover-a.ui-btn.back-btn {
+  background: center center url(../img/back.png) no-repeat;
+  left: 0;
+}
+/* line 61, ../scss/_ui.scss */
+.ui-header .ui-btn-up-a.ui-btn.back-btn:hover,
+.ui-header .ui-btn-hover-a.ui-btn.back-btn:hover {
+  background-color: #47aba6;
+}
+
+/* line 67, ../scss/_ui.scss */
 .ui-btn-inline {
   background: #66bfbb;
   border: #388783;
 }
-/* line 40, ../scss/_ui.scss */
+/* line 71, ../scss/_ui.scss */
 .ui-btn-inline:hover {
   background: #409995;
 }
-/* line 44, ../scss/_ui.scss */
+/* line 75, ../scss/_ui.scss */
 .ui-btn-inline .ui-btn-text {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 51, ../scss/_ui.scss */
+/* line 84, ../scss/_ui.scss */
 .ui-controlgroup-controls .ui-radio-on {
   background: #66bfbb;
   border-color: #66bfbb;
 }
 
-/* line 57, ../scss/_ui.scss */
+/* line 90, ../scss/_ui.scss */
 .ui-listview {
   border-radius: 4px;
   overflow: hidden;
 }
-/* line 61, ../scss/_ui.scss */
+/* line 94, ../scss/_ui.scss */
 .ui-listview .ui-btn {
   background: #66bfbb;
   border: 0;
 }
-/* line 65, ../scss/_ui.scss */
+/* line 98, ../scss/_ui.scss */
 .ui-listview .ui-btn a {
   text-shadow: none;
 }
@@ -328,7 +407,7 @@ div.ui-slider {
   font-size: 0.9em;
 }
 
-/* line 31, ../scss/screen.scss */
+/* line 57, ../scss/screen.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

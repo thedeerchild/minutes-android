@@ -1,34 +1,65 @@
-[data-role="page"] {
-	max-width: 1024px;
-	margin: auto;
-	background: url('../img/wavegrid.png');
-}
-
 .ui-header {
 	// box-shadow: 0 2px 0 rgba($base-color, 0.5);
 	
-	h1 {
-		// text-shadow: 0 -1px 0 rgba(#000, 0.5);
+	h1.ui-title {
+		text-shadow: none;
+		font-size: 2em;
+		margin: 0;
+		padding: 0.2em;
+		font-weight: 200;
+		min-height: 0;
 	}
 }
 
 .ui-bar-a {
-	border-color: transparent;
+	border: 0;
 	background: $base-color;
-		
+
+	&.ui-footer {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
+
+
 	.ui-btn {
 		@include transition-property(background);
 		@include transition-duration(0.3s);
-
-		border-color: transparent;
-		border-radius: 4px;
-		box-shadow: inset 0 2px 2px rgba(#fff, 0.25);
-		background: darken($base-color, 15%);
+		border: 0;
+		@include border-radius(0);
+		@include box-shadow(none);
+		background-color: $base-color;
 		
 		&:hover {
 			background: darken($base-color, 25%);
 			@include transition-property(background);
 			@include transition-duration(0.3s);
+		}
+	}
+
+
+}
+
+.ui-header .ui-btn-up-a, 
+.ui-header .ui-btn-hover-a {
+	height: 100%;;
+	width: 3em;
+	top: 0;
+
+	&.ui-btn.settings-btn {
+		background: center center url(../img/settings.png) no-repeat;
+		right: 0;
+		&:hover {
+			background-color: darken($base-color, 10%);
+		}
+	}
+
+	&.ui-btn.back-btn {
+		background: center center url(../img/back.png) no-repeat;
+		left: 0;
+
+		&:hover {
+			background-color: darken($base-color, 10%);
 		}
 	}
 }
@@ -46,6 +77,8 @@
 		text-shadow: 0 -1px 0 rgba(#000, 0.5);
 	}
 }
+
+
 
 .ui-controlgroup-controls {
 	.ui-radio-on {
