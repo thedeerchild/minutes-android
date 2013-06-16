@@ -137,23 +137,6 @@
 	<script type="text/javascript">
 		$(function(){
 
-			$('body').on('click', '.next-article-button', function(e){
-				var $currentPage = $('#reader');
-				var $nextPage = $currentPage.clone().attr('id','').insertAfter($currentPage);
-				$nextPage.find('h2').text('Article too')
-
-				$.mobile.changePage($nextPage, {
-					transition: 'slideup',
-				});
-
-				window.setTimeout(function(){
-					$currentPage.remove();
-				}, 1000);
-				$nextPage[0].id = 'reader';
-
-				e.preventDefault();
-			});
-
 		});
 	</script>
 

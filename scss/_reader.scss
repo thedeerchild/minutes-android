@@ -1,0 +1,18 @@
+.article-text {
+	padding: 0 1em;
+
+	h2 {
+		color: $minty-green;
+		font-size: 2em;
+		margin: 1.5em auto;
+		text-align: center;
+		line-height: 120%;
+		max-width: 75%;
+		font-weight: 200;
+	}
+
+	p {
+		line-height: 140%;
+		margin-bottom: 1em;
+	}
+}

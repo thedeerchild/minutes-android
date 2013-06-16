@@ -76,14 +76,19 @@ $(function(){
 	}
 
 	var loadArticle = function() {
+		// Find the reader
+		var reader = $('#reader');
+		// Delete old content
+		reader.find('.article-text').remove();
+
+		// Ask for new content
 		var params = {
 			minutes: storage.getItem('timer') / 1000 / 60,
 			current: 10,
 			token: window.localStorage.getItem('access_token'),
 		};
 		$.get(DOMAIN+'article.json', params, function(data, textStatus, jqXHR) {
-			// Find the reader
-			var reader = $('#reader');
+			console.log("Found an article that's "+data.minutes+" minutes long with "+(storage.getItem('timer') / 1000 / 60)+" minutes left.");
 
 			// Fill in content
 			var content = $('<div />', {class: 'article-text'});
@@ -91,9 +96,33 @@ $(function(){
 			$(data.content).appendTo(content);
 
 			// Attach it to the thang
-			content.insertAfter(reader.children('div').eq(0));
-
+			content.insertAfter(reader.children()[0]);
 		});
 	}
+
+	var nextArticle = function() {
+		var $currentPage = $('#reader');
+		$currentPage.find('.article-text').remove();
+		var $nextPage = $currentPage.clone().attr('id','').insertAfter($currentPage);
+
+		$.mobile.changePage($nextPage, {
+			transition: 'slideup',
+		});
+
+		window.setTimeout(function(){
+			$currentPage.remove();
+		}, 1000);
+		$nextPage[0].id = 'reader';
+
+		loadArticle();
+	}
+
+	$(document).on('pageinit', '#reader', function(){
+		console.log("Jello");
+		$(this).find('.next-article-button').click(function(e){
+			nextArticle();
+			e.preventDefault();
+		});
+	});
 
 });
