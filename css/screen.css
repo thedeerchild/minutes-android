@@ -84,6 +84,11 @@ body {
     margin: 0 auto !important;
     position: relative !important;
   }
+
+  /* line 21, ../scss/screen.scss */
+  .ui-mobile-viewport-transitioning, .ui-overlay-a {
+    box-shadow: none;
+  }
 }
 /* line 1, ../scss/_ui.scss */
 body {
@@ -93,20 +98,25 @@ body {
 }
 
 /* line 7, ../scss/_ui.scss */
+#auth p, #signin p {
+  text-align: center;
+}
+
+/* line 11, ../scss/_ui.scss */
 [data-role="page"] {
   background: url("../img/wavegrid.png");
 }
 
-/* line 11, ../scss/_ui.scss */
+/* line 15, ../scss/_ui.scss */
 .ui-header {
   box-shadow: 0 2px 0 rgba(102, 191, 187, 0.5);
 }
-/* line 14, ../scss/_ui.scss */
+/* line 18, ../scss/_ui.scss */
 .ui-header h1 {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 19, ../scss/_ui.scss */
+/* line 23, ../scss/_ui.scss */
 .ui-bar-a {
   border-color: transparent;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #66bfbb), color-stop(100%, #47aba6));
@@ -115,7 +125,7 @@ body {
   background: -o-linear-gradient(top, #66bfbb, #47aba6);
   background: linear-gradient(top, #66bfbb, #47aba6);
 }
-/* line 24, ../scss/_ui.scss */
+/* line 28, ../scss/_ui.scss */
 .ui-bar-a .ui-btn {
   -webkit-transition-property: background;
   -moz-transition-property: background;
@@ -130,7 +140,7 @@ body {
   box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.25);
   background: #409995;
 }
-/* line 33, ../scss/_ui.scss */
+/* line 37, ../scss/_ui.scss */
 .ui-bar-a .ui-btn:hover {
   background: #317572;
   -webkit-transition-property: background;
@@ -143,43 +153,43 @@ body {
   transition-duration: 0.3s;
 }
 
-/* line 41, ../scss/_ui.scss */
+/* line 45, ../scss/_ui.scss */
 .ui-btn-inline {
   background: #66bfbb;
   border: #388783;
 }
-/* line 45, ../scss/_ui.scss */
+/* line 49, ../scss/_ui.scss */
 .ui-btn-inline:hover {
   background: #409995;
 }
-/* line 49, ../scss/_ui.scss */
+/* line 53, ../scss/_ui.scss */
 .ui-btn-inline .ui-btn-text {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 56, ../scss/_ui.scss */
+/* line 60, ../scss/_ui.scss */
 .ui-controlgroup-controls .ui-radio-on {
   background: #66bfbb;
   border-color: #66bfbb;
 }
 
-/* line 62, ../scss/_ui.scss */
+/* line 66, ../scss/_ui.scss */
 .ui-listview {
   border-radius: 4px;
   overflow: hidden;
 }
-/* line 66, ../scss/_ui.scss */
+/* line 70, ../scss/_ui.scss */
 .ui-listview .ui-btn {
   background: #66bfbb;
   border: 0;
 }
-/* line 70, ../scss/_ui.scss */
+/* line 74, ../scss/_ui.scss */
 .ui-listview .ui-btn a {
   text-shadow: none;
 }
 
-/* line 76, ../scss/_ui.scss */
+/* line 80, ../scss/_ui.scss */
 div.ui-slider {
   background: #fff;
   border-radius: 100px;
@@ -190,14 +200,14 @@ div.ui-slider {
   margin: 1em 28.5%;
 }
 @media screen and (max-width: 500px) {
-  /* line 76, ../scss/_ui.scss */
+  /* line 80, ../scss/_ui.scss */
   div.ui-slider {
     width: 60%;
     margin: 1em 20%;
   }
 }
 
-/* line 90, ../scss/_ui.scss */
+/* line 94, ../scss/_ui.scss */
 .ui-slider-handle {
   background: #66bfbb;
   border-radius: 1000px;
@@ -205,7 +215,7 @@ div.ui-slider {
   border: 0;
 }
 
-/* line 96, ../scss/_ui.scss */
+/* line 100, ../scss/_ui.scss */
 .ui-slider-input {
   display: none !important;
 }
@@ -358,7 +368,7 @@ div.ui-slider {
   font-size: 0.9em;
 }
 
-/* line 42, ../scss/screen.scss */
+/* line 45, ../scss/screen.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

@@ -4,6 +4,10 @@ body {
 	margin-right: auto;
 }
 
+#auth p, #signin p {
+	text-align: center;
+}
+
 [data-role="page"] {
 	background: url('../img/wavegrid.png');
 }
