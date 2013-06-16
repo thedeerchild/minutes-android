@@ -1,6 +1,6 @@
 $(function(){
 
-	DOMAIN = 'http://minutesreader.herokuapp.com/';
+	DOMAIN = 'http://api.minutesreader.com/';
 
 	/*
 		Timer stuff
@@ -21,7 +21,9 @@ $(function(){
 
 	var initTimer = function(val) {
 		storage.setItem('timer', val);
-		// console.log("Timer set at "+storage.getItem('timer'));
+
+		$('.article-footer p').text('Your time\'s about up! Have a good day.');
+		$('.article-footer .ui-btn-text').text('Finish');
 
 		readingTimer = window.setInterval(function(){
 			// Decrement timer
@@ -31,9 +33,9 @@ $(function(){
 			// If it's <= zero, set it to 0 and announce it
 			if (val <= 0) {
 				val = 0;
-				timeUpAlert();
 
-				window.clearInterval(readingTimer);
+				timeUpAlert();
+				killTimer();
 			}
 
 			// Save the value to local storage
@@ -43,6 +45,12 @@ $(function(){
 
 	var timeUpAlert = function() {
 		console.log("Time's up!");
+
+		$('.article-footer p').text('You\'ve got more time; go ahead and keep reading!');
+		$('.article-footer .ui-btn-text').text('Next');
+	}
+	var killTimer = function() {
+		window.clearInterval(readingTimer);
 	}
 
 	var loadArticle = function(reader, save) {
@@ -102,8 +110,13 @@ $(function(){
 
 	// Click events for next/skip buttons
 	$('body').on('click', '.next-article-button', function(e) {
-		nextArticle();
-		e.preventDefault();
+		if (window.localStorage.getItem('timer') > 0) {
+			nextArticle();
+			e.preventDefault();
+		}
+		else {
+			$.mobile.changePage($('#home'), {transition: 'slide'});
+		}
 	});
 	$('body').on('click', '.skip-article-button', function(e) {
 		nextArticle(true);
@@ -133,6 +146,10 @@ $(function(){
 		if (size !== null) {
 			$('input[name="textSize"][value="'+size+'"]').prop('checked', true);
 		}
+	});
+
+	$(document).on('pageinit', '#home', function(){
+		killTimer();
 	});
 
 
