@@ -88,7 +88,9 @@ $(function(){
 			uiLoading.hide(0);
 
       $(document).trigger('reader:load', data);
-		});
+		}).fail(function() {
+      $(".loading-text").html("Looks like you cleaned your Pocket queue, good job!");
+    });
 	}
 
 	var nextArticle = function(skip) {
