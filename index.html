@@ -40,20 +40,13 @@
 			</div>
 
 			<div data-role="fieldcontain">
-	            <input id="time-slider" type="range" name="slider" value="15" min="2" max="30" step="5" data-highlight="false">
-	        </div>
+	      <input id="time-slider" type="range" name="slider" value="15" min="2" max="30" step="5" data-highlight="false">
+      </div>
 
-	        <a class="start-reading-button" data-role="button" data-inline="true" data-transition="slide" href="#reader">
-                Start reading
-            </a>
+      <a class="start-reading-button" data-role="button" data-inline="true" data-transition="slide" href="#reader">
+            Start reading
+      </a>
 
-          <div
-            class="fb-login-button"
-            data-show-faces="true"
-            data-width="200"
-            data-max-rows="1"
-            data-scope="publish_actions">
-          </div>
 		</div><!-- /content -->
 
 		<div data-role="footer">
@@ -146,7 +139,7 @@
 		<div data-role="header">
 			<a data-role="button" href="#reader" data-rel="back" data-transition="slideup" class="ui-btn-left">
 				Done
-	        </a>
+	    </a>
 
 			<h1>Settings</h1>
 		</div>
@@ -155,25 +148,29 @@
 			
 			<!-- Font size -->
 			<div data-role="fieldcontain">
-	            <fieldset data-role="controlgroup" data-type="horizontal">
-	                <legend>
-	                    Font size
-	                </legend>
-	                <input id="radio1" name="textSize" value="small" type="radio">
-	                <label for="radio1">
-	                    Small
-	                </label>
-	                <input id="radio2" name="textSize" value="medium" type="radio" checked>
-	                <label for="radio2">
-	                    Medium
-	                </label>
-	                <input id="radio3" name="textSize" value="large" type="radio">
-	                <label for="radio3">
-	                    Large
-	                </label>
-	            </fieldset>
-	        </div>
+	        <fieldset data-role="controlgroup" data-type="horizontal">
+	            <legend>
+	            	Font size
+		        </legend>
+		        <input id="radio1" name="textSize" value="small" type="radio">
+		        <label for="radio1">
+	            	Small
+	            </label>
+	            <input id="radio2" name="textSize" value="medium" type="radio" checked>
+	            <label for="radio2">
+	            	Medium
+	            </label>
+	            <input id="radio3" name="textSize" value="large" type="radio">
+	            <label for="radio3">
+	            	Large
+	            </label>
+	        </fieldset>
+
+	        <div id="fbConnect" class="fb-login-button" data-show-faces="false" data-width="200" data-max-rows="1" data-scope="publish_actions"></div>
+
+	    </div>
 	        <!-- /Font size -->
+
 
 	        <!-- Misc -->
 			<ul data-role="listview" data-divider-theme="" data-inset="true">
