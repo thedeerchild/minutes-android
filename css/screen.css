@@ -67,8 +67,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 6, ../scss/screen.scss */
 body {
   font-family: "Helvetica Neue", sans-serif;
+  background: url("../img/wavegrid.png") !important;
 }
 
+@media screen and (min-width: 1024px) {
+  /* line 11, ../scss/screen.scss */
+  .ui-mobile-viewport {
+    width: 1024px;
+    margin: 0 auto;
+  }
+
+  /* line 15, ../scss/screen.scss */
+  .ui-page {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 1024px !important;
+    margin: 0 auto !important;
+    position: relative !important;
+  }
+}
 /* line 1, ../scss/_ui.scss */
 body {
   max-width: 960px;
@@ -239,7 +255,13 @@ div.ui-slider {
   margin-right: auto;
 }
 
-/* line 3, ../scss/_reader.scss */
+/* line 2, ../scss/_reader.scss */
+.article-text {
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 7, ../scss/_reader.scss */
 .article-text h2 {
   color: #66bfbb;
   font-size: 2em;
@@ -250,28 +272,28 @@ div.ui-slider {
   font-weight: 200;
 }
 @media screen and (max-width: 768px) {
-  /* line 3, ../scss/_reader.scss */
+  /* line 7, ../scss/_reader.scss */
   .article-text h2 {
     margin: 0.75em auto 1em auto;
   }
 }
-/* line 17, ../scss/_reader.scss */
+/* line 21, ../scss/_reader.scss */
 .article-text p {
   line-height: 140%;
   margin-bottom: 1em;
 }
 
-/* line 25, ../scss/_reader.scss */
+/* line 29, ../scss/_reader.scss */
 .reader-textsize-small .article-text p {
   font-size: 0.8em;
 }
 
-/* line 28, ../scss/_reader.scss */
+/* line 32, ../scss/_reader.scss */
 .reader-textsize-large .article-text p {
   font-size: 1.25em;
 }
 
-/* line 33, ../scss/_reader.scss */
+/* line 37, ../scss/_reader.scss */
 .loading-text {
   margin-top: 2em;
   text-align: center;
@@ -279,7 +301,7 @@ div.ui-slider {
   color: #666;
 }
 
-/* line 41, ../scss/_reader.scss */
+/* line 45, ../scss/_reader.scss */
 .article-footer {
   max-width: 600px;
   margin: 2em auto 0 auto;
@@ -287,12 +309,12 @@ div.ui-slider {
   border-top: 1px solid #999999;
   text-align: center;
 }
-/* line 48, ../scss/_reader.scss */
+/* line 52, ../scss/_reader.scss */
 .article-footer p {
   margin-bottom: 1em;
 }
 
-/* line 54, ../scss/_reader.scss */
+/* line 58, ../scss/_reader.scss */
 .article-text > iframe {
   margin-left: auto;
   margin-right: auto;
@@ -300,21 +322,21 @@ div.ui-slider {
   height: 360px;
 }
 @media screen and (max-width: 640px) {
-  /* line 54, ../scss/_reader.scss */
+  /* line 58, ../scss/_reader.scss */
   .article-text > iframe {
     width: 500px;
     height: 281px;
   }
 }
 @media screen and (max-width: 500px) {
-  /* line 54, ../scss/_reader.scss */
+  /* line 58, ../scss/_reader.scss */
   .article-text > iframe {
     width: 400px;
     height: 225px;
   }
 }
 @media screen and (max-width: 400px) {
-  /* line 54, ../scss/_reader.scss */
+  /* line 58, ../scss/_reader.scss */
   .article-text > iframe {
     width: 320px;
     height: 180px;
@@ -336,7 +358,7 @@ div.ui-slider {
   font-size: 0.9em;
 }
 
-/* line 29, ../scss/screen.scss */
+/* line 42, ../scss/screen.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
