@@ -88,7 +88,7 @@ $(function(){
 			var content = $('<div />', {class: 'article-text'});
 
 			$('<h2 />', {text: data.title}).appendTo(content);
-			$(encodeToParagraph(data.content)).appendTo(content);
+			$(data.content).appendTo(content);
 
 			content.insertAfter(reader.children('div').eq(0));
 
