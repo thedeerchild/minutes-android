@@ -76,7 +76,7 @@ body {
   max-width: 940px;
   position: relative;
 }
-@media screen and (min-width: 345px) {
+@media screen and (min-width: 600px) {
   /* line 13, ../scss/screen.scss */
   .ui-page[data-role="page"] {
     width: 90%;
