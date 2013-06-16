@@ -1,3 +1,12 @@
+// Article title
+#reader h1 {
+	text-overflow: ellipsis;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 1.3em;
+	margin-right: 1.3em;
+}
+
 // Article header + body
 .article-text {
 	max-width: 40em;
@@ -20,26 +29,31 @@
 
 	p {
 		margin-bottom: 1em;
+		font-family: serif;
 	}
 
 }
 
 .reader-textsize-extrasmall .article-text p  {font-size: 0.8em; }
-.reader-textsize-small .article-text p { font-size: 0.8em; }
+.reader-textsize-small .article-text p { font-size: 0.9em; }
 .reader-textsize-medium .article-text p { font-size: 1em; }
-.reader-textsize-large .article-text p { font-size: 1.2em; }
-.reader-textsize-extralarge .article-text p { font-size: 1.4em; }
+.reader-textsize-large .article-text p { font-size: 1.1em; }
+.reader-textsize-extralarge .article-text p { font-size: 1.2em; }
 
-.reader-background-light .article-text { background-color: #fff; color: #555; }
-.reader-background-medium .article-text { background-color: #fff; color: #555; }
-.reader-background-dark .article-text { background-color: #333; color: #ddd; }
+// .reader-background-light .article-text { background-color: #fff; color: #555; }
+// .reader-background-medium .article-text { background-color: #fff; color: #555; }
+// .reader-background-dark .article-text { background-color: #333; color: #ddd; }
 
-.reader-line-regular .article-text p { line-height: 1.1 }
-.reader-line-tall .article-text p { line-height: 1.4 }
+.reader-lineheight-short .article-text p { line-height: 1.1 }
+.reader-lineheight-regular .article-text p { line-height: 1.4 }
+.reader-lineheight-tall .article-text p { line-height: 1.9 }
 
-.reader-width-small .article-text { max-width: 35em; }
-.reader-width-medium .article-text { max-width: 40em; }
-.reader-width-large .article-text { max-width: 45em; }
+.reader-font-sans .article-text p { font-family: 'Droid Sans', 'Helvetica Neue', Helvetica, SansSerif; }
+.reader-font-serif .article-text p { font-family: 'Droid Serif', Georgia, Serif; }
+
+// .reader-width-small .article-text { max-width: 35em; }
+// .reader-width-medium .article-text { max-width: 40em; }
+// .reader-width-large .article-text { max-width: 45em; }
 
 
 // Loading text before article appears

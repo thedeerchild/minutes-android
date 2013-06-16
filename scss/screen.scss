@@ -4,6 +4,8 @@
 $base-color: #66bfbb;
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,200,100);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
 body {
 	font-family: 'Roboto', 'Helvetica Neue', sans-serif;
@@ -16,7 +18,7 @@ body {
 	max-width: 940px;
 	position: relative;
 
-	@media screen and (min-width: 600px) {
+	@media screen and (min-width: 768px) {
 		width: 90%;
 		margin: 0 auto;
 		border: 0;

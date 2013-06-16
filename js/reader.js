@@ -123,22 +123,73 @@ $(function(){
 		e.preventDefault();
 	});
 
-	// Set font size CSS on page ready
-	$(document).on('pageinit', '#reader', function(){
-		var size = $('input[name="textSize"]:checked').val();
-		$('#reader').addClass('reader-textsize-'+size);
-	});
+	/*  ===============
+		READER SETTINGS
+		===============
+	*/
 
-	// Saving/loading text size choice
+	// Text size
 	$('input[name="textSize"]').change(function(){
-		window.localStorage.setItem('text-size', $(this).val());
+		var size = $('input[name="textSize"]:checked').val();
+
+		window.localStorage.setItem('text-size', size);
+		$('#reader')
+			.removeClass('eader-textsize-extrasmall reader-textsize-small reader-textsize-medium reader-textsize-large reader-textsize-extralarge')
+			.addClass('reader-textsize-'+size);
+
 	});
 	$(document).ready(function(){
 		var size = window.localStorage.getItem('text-size');
 		if (size !== null) {
 			$('input[name="textSize"][value="'+size+'"]').prop('checked', true);
+			$('#reader')
+				.removeClass('eader-textsize-extrasmall reader-textsize-small reader-textsize-medium reader-textsize-large reader-textsize-extralarge')
+				.addClass('reader-textsize-'+size);
 		}
 	});
+
+// Line height
+	$('input[name="lineheight"]').change(function(){
+		var color = $('input[name="lineheight"]:checked').val();
+
+		window.localStorage.setItem('lineheight', color);
+		$('#reader')
+			.removeClass('reader-lineheight-short reader-lineheight-regular reader-lineheight-tall')
+			.addClass('reader-lineheight-'+color);
+
+	});
+	$(document).ready(function(){
+		var color = window.localStorage.getItem('lineheight');
+		if (color !== null) {
+			$('input[name="lineheight"][value="'+color+'"]').prop('checked', true);
+			$('#reader')
+				.removeClass('reader-lineheight-short reader-lineheight-regular reader-lineheight-tall')
+				.addClass('reader-lineheight-'+color);
+		}
+	});
+
+	// Font Style
+	$('input[name="font"]').change(function(){
+		var color = $('input[name="font"]:checked').val();
+
+		window.localStorage.setItem('font', color);
+		$('#reader')
+			.removeClass('reader-font-sans reader-font-serif')
+			.addClass('reader-font-'+color);
+
+	});
+	$(document).ready(function(){
+		var color = window.localStorage.getItem('lineheight');
+		if (color !== null) {
+			$('input[name="font"][value="'+color+'"]').prop('checked', true);
+			$('#reader')
+				.removeClass('reader-font-sans reader-font-serif')
+				.addClass('reader-font-'+color);
+		}
+	});
+
+
+	// ----------
 
 	$(document).on('pageinit', '#home', function(){
 		killTimer();

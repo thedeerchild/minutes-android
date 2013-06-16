@@ -107,7 +107,8 @@
 		<div data-role="header">
 	        <a data-role="button" href="#home" data-transition="slide" data-rel="back" class="ui-btn-left back-btn"></a>
 	        <a data-role="button" href="#settings" data-rel="dialog" data-transition="pop" class="ui-btn-right settings-btn"></a>
-	        <h1> {article title} </h1>
+	        
+	        <h1>Minutes</h1>
 		</div>
 
 		<div data-role="content">
@@ -143,24 +144,61 @@
 		            <legend>
 		            	Font size
 			        </legend>
-			        <input id="radio1" name="textSize" value="small" type="radio">
+			        <input id="radio1" name="textSize" value="extrasmall" type="radio">
 			        <label for="radio1">
-		            	Small
+		            	Aa
 		            </label>
-		            <input id="radio2" name="textSize" value="medium" type="radio" checked>
+		            <input id="radio2" name="textSize" value="small" type="radio">
 		            <label for="radio2">
-		            	Medium
+		            	Aa
 		            </label>
-		            <input id="radio3" name="textSize" value="large" type="radio">
+		            <input id="radio3" name="textSize" value="medium" type="radio">
 		            <label for="radio3">
-		            	Large
+		            	Aa
+		            </label>
+		            <input id="radio4" name="textSize" value="large" type="radio">
+		            <label for="radio4">
+		            	Aa
+		            </label>
+		            <input id="radio5" name="textSize" value="extralarge" type="radio">
+		            <label for="radio5">
+		            	Aa
+		            </label>
+		        </fieldset>
+		        <fieldset data-role="controlgroup" data-type="horizontal">
+		            <legend>
+		            	Line Height
+			        </legend>
+			        <input id="radio3" name="lineheight" value="short" type="radio">
+		            <label for="radio3">
+		            	Short
+		            </label>
+			        <input id="radio1" name="lineheight" value="regular" type="radio">
+			        <label for="radio1">
+		            	Regular
+		            </label>
+		            <input id="radio2" name="lineheight" value="tall" type="radio">
+		            <label for="radio2">
+		            	Tall
+		            </label>
+		        </fieldset>
+		        <fieldset data-role="controlgroup" data-type="horizontal">
+		            <legend>
+		            	Font Style
+			        </legend>
+			        <input id="radio1" name="font" value="sans" type="radio" checked>
+			        <label for="radio1">
+		            	Sans Serif
+		            </label>
+		            <input id="radio2" name="font" value="serif" type="radio">
+		            <label for="radio2">
+		            	Serif
 		            </label>
 		        </fieldset>
 
 		        <div id="fbConnect" class="fb-login-button" data-show-faces="false" data-width="200" data-max-rows="1" data-scope="publish_actions"></div>
 
 		    </div>
-	        <!-- /Font size -->
 
 
 	        <!-- Misc -->
@@ -173,7 +211,7 @@
 	        </ul>
 	        <!-- /Misc -->
 
-    		<a data-role="button" href="#home" data-inline="true" data-rel="" data-transition="pop" class="ui-btn-left">
+    		<a id="settingsEscape" data-role="button" data-inline="true" data-rel="back" data-transition="pop" class="ui-btn-left">
     			Done
             </a>
 
@@ -199,7 +237,7 @@
 			<p>Elomar Souza</p>
 			<p>Chen Liang</p>
 
-			<a data-role="button" href="#settings" data-rel="dialog" data-inline="true" data-transition="flip">
+			<a data-role="button" href="" data-rel="back" data-inline="true" data-transition="flip">
 				Back
 			</a>
 		</div>

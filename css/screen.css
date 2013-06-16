@@ -1,4 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,300,200,100);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 /* line 17, ../../../.rbenv/versions/2.0.0-p195/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -64,21 +66,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 8, ../scss/screen.scss */
+/* line 10, ../scss/screen.scss */
 body {
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
   background: url("../img/wavegrid.png") !important;
   font-size: 18px;
 }
 
-/* line 14, ../scss/screen.scss */
+/* line 16, ../scss/screen.scss */
 .ui-page[data-role="page"] {
   width: 100%;
   max-width: 940px;
   position: relative;
 }
-@media screen and (min-width: 600px) {
-  /* line 14, ../scss/screen.scss */
+@media screen and (min-width: 768px) {
+  /* line 16, ../scss/screen.scss */
   .ui-page[data-role="page"] {
     width: 90%;
     margin: 0 auto;
@@ -90,13 +92,13 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-  /* line 28, ../scss/screen.scss */
+  /* line 30, ../scss/screen.scss */
   .ui-mobile-viewport {
     width: 940px;
     margin: 0 auto;
   }
 
-  /* line 32, ../scss/screen.scss */
+  /* line 34, ../scss/screen.scss */
   .ui-page {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     width: 1024px !important;
@@ -104,7 +106,7 @@ body {
     position: relative !important;
   }
 
-  /* line 38, ../scss/screen.scss */
+  /* line 40, ../scss/screen.scss */
   .ui-mobile-viewport-transitioning, .ui-overlay-a {
     box-shadow: none;
   }
@@ -320,12 +322,21 @@ div.ui-slider {
 }
 
 /* line 2, ../scss/_reader.scss */
+#reader h1 {
+  text-overflow: ellipsis;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 1.3em;
+  margin-right: 1.3em;
+}
+
+/* line 11, ../scss/_reader.scss */
 .article-text {
   max-width: 40em;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 7, ../scss/_reader.scss */
+/* line 16, ../scss/_reader.scss */
 .article-text h2 {
   color: #66bfbb;
   font-size: 2em;
@@ -336,85 +347,68 @@ div.ui-slider {
   font-weight: 200;
 }
 @media screen and (max-width: 768px) {
-  /* line 7, ../scss/_reader.scss */
+  /* line 16, ../scss/_reader.scss */
   .article-text h2 {
     margin: 0.75em auto 1em auto;
   }
 }
-/* line 21, ../scss/_reader.scss */
+/* line 30, ../scss/_reader.scss */
 .article-text p {
   margin-bottom: 1em;
+  font-family: serif;
 }
 
-/* line 27, ../scss/_reader.scss */
+/* line 37, ../scss/_reader.scss */
 .reader-textsize-extrasmall .article-text p {
   font-size: 0.8em;
 }
 
-/* line 28, ../scss/_reader.scss */
+/* line 38, ../scss/_reader.scss */
 .reader-textsize-small .article-text p {
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
-/* line 29, ../scss/_reader.scss */
+/* line 39, ../scss/_reader.scss */
 .reader-textsize-medium .article-text p {
   font-size: 1em;
 }
 
-/* line 30, ../scss/_reader.scss */
-.reader-textsize-large .article-text p {
-  font-size: 1.2em;
-}
-
-/* line 31, ../scss/_reader.scss */
-.reader-textsize-extralarge .article-text p {
-  font-size: 1.4em;
-}
-
-/* line 33, ../scss/_reader.scss */
-.reader-background-light .article-text {
-  background-color: #fff;
-  color: #555;
-}
-
-/* line 34, ../scss/_reader.scss */
-.reader-background-medium .article-text {
-  background-color: #fff;
-  color: #555;
-}
-
-/* line 35, ../scss/_reader.scss */
-.reader-background-dark .article-text {
-  background-color: #333;
-  color: #ddd;
-}
-
-/* line 37, ../scss/_reader.scss */
-.reader-line-regular .article-text p {
-  line-height: 1.1;
-}
-
-/* line 38, ../scss/_reader.scss */
-.reader-line-tall .article-text p {
-  line-height: 1.4;
-}
-
 /* line 40, ../scss/_reader.scss */
-.reader-width-small .article-text {
-  max-width: 35em;
+.reader-textsize-large .article-text p {
+  font-size: 1.1em;
 }
 
 /* line 41, ../scss/_reader.scss */
-.reader-width-medium .article-text {
-  max-width: 40em;
+.reader-textsize-extralarge .article-text p {
+  font-size: 1.2em;
 }
 
-/* line 42, ../scss/_reader.scss */
-.reader-width-large .article-text {
-  max-width: 45em;
+/* line 47, ../scss/_reader.scss */
+.reader-lineheight-short .article-text p {
+  line-height: 1.1;
 }
 
-/* line 46, ../scss/_reader.scss */
+/* line 48, ../scss/_reader.scss */
+.reader-lineheight-regular .article-text p {
+  line-height: 1.4;
+}
+
+/* line 49, ../scss/_reader.scss */
+.reader-lineheight-tall .article-text p {
+  line-height: 1.9;
+}
+
+/* line 51, ../scss/_reader.scss */
+.reader-font-sans .article-text p {
+  font-family: 'Droid Sans', 'Helvetica Neue', Helvetica, SansSerif;
+}
+
+/* line 52, ../scss/_reader.scss */
+.reader-font-serif .article-text p {
+  font-family: 'Droid Serif', Georgia, Serif;
+}
+
+/* line 60, ../scss/_reader.scss */
 .loading-text {
   margin-top: 2em;
   text-align: center;
@@ -422,7 +416,7 @@ div.ui-slider {
   color: #666;
 }
 
-/* line 54, ../scss/_reader.scss */
+/* line 68, ../scss/_reader.scss */
 .article-footer {
   max-width: 600px;
   margin: 2em auto 0 auto;
@@ -430,12 +424,12 @@ div.ui-slider {
   border-top: 1px solid #999;
   text-align: center;
 }
-/* line 61, ../scss/_reader.scss */
+/* line 75, ../scss/_reader.scss */
 .article-footer p {
   margin-bottom: 1em;
 }
 
-/* line 67, ../scss/_reader.scss */
+/* line 81, ../scss/_reader.scss */
 .article-text > iframe {
   margin-left: auto;
   margin-right: auto;
@@ -443,21 +437,21 @@ div.ui-slider {
   height: 360px;
 }
 @media screen and (max-width: 640px) {
-  /* line 67, ../scss/_reader.scss */
+  /* line 81, ../scss/_reader.scss */
   .article-text > iframe {
     width: 500px;
     height: 281px;
   }
 }
 @media screen and (max-width: 500px) {
-  /* line 67, ../scss/_reader.scss */
+  /* line 81, ../scss/_reader.scss */
   .article-text > iframe {
     width: 400px;
     height: 225px;
   }
 }
 @media screen and (max-width: 400px) {
-  /* line 67, ../scss/_reader.scss */
+  /* line 81, ../scss/_reader.scss */
   .article-text > iframe {
     width: 320px;
     height: 180px;
@@ -479,7 +473,7 @@ div.ui-slider {
   font-size: 0.9em;
 }
 
-/* line 61, ../scss/screen.scss */
+/* line 63, ../scss/screen.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
