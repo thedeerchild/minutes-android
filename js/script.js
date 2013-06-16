@@ -79,17 +79,18 @@ $(function(){
 		var params = {
 			minutes: storage.getItem('timer') / 1000 / 60,
 			current: 10,
-			token: '08bd1ab3-7915-4b94-72e4-da6ed6',
+			token: window.localStorage.getItem('access_token'),
 		};
 		$.get(DOMAIN+'article.json', params, function(data, textStatus, jqXHR) {
 			// Find the reader
 			var reader = $('#reader');
 
+			// Fill in content
 			var content = $('<div />', {class: 'article-text'});
-
 			$('<h2 />', {text: data.title}).appendTo(content);
 			$(data.content).appendTo(content);
 
+			// Attach it to the thang
 			content.insertAfter(reader.children('div').eq(0));
 
 		});

@@ -24,7 +24,11 @@ AUTH = {
 		}
 
 		$.get(url, params, function(data, textStatus, jqXHR) {
+			// Save the access token and ditch the request token
 			window.localStorage.setItem('access_token', data.access_token);
+			window.localStorage.setItem('request_token', null);
+
+			// Tell the user sign-in worked, and redirect to the home page
 			$('#auth p').text('Sign in successful!');
 			window.setTimeout(function(){
 				$.mobile.changePage($('#home'), {transition: 'slideup'})
