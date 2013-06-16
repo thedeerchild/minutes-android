@@ -1,0 +1,128 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title></title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+	<script src="js/script.js"></script>
+</head> 
+
+<body>
+
+	<!--
+		HOME (TIME PICKER)
+	-->
+
+	<div data-role="page" id="home">
+
+		<div data-role="header">
+			<h1>Minutes</h1>
+		</div><!-- /header -->
+
+		<div data-role="content">	
+			<p>How much time do you have?</p>
+
+			<div class="time-picker-clock">
+				
+			</div>
+
+			<div data-role="fieldcontain">
+	            <input id="slider1" type="range" name="slider" value="15" min="0" max="30" step="1" data-highlight="false">
+	        </div>
+
+	        <a class="start-reading-button" data-role="button" data-inline="true" data-transition="slide" href="#reader">
+                Start reading
+            </a>
+		</div><!-- /content -->
+
+		<div data-role="footer">
+			<a data-role="button" href="#settings" data-transition="slideup" class="ui-btn-left">
+				Settings
+	        </a>
+
+			<h4>Page Footer</h4>
+		</div><!-- /footer -->
+	</div><!-- /page -->
+
+	<!--
+		READER
+	-->
+
+	<div data-role="page" id="reader">
+		
+		<div data-role="header">
+			<a data-role="button" href="#reader" class="ui-btn-right">
+				Skip
+	        </a>
+	        <a data-role="button" href="#home" data-transition="slide" data-rel="back" class="ui-btn-left">
+	            Back
+	        </a>
+
+	        <h1></h1>
+		</div>
+
+		<div class="article-text">
+			<h2>Article title</h2>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, velit incidunt beatae laboriosam nesciunt quam dolor dolorum nobis vero aperiam! In, consectetur, debitis voluptatibus dolore rerum quia eligendi dolorum sunt.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, velit incidunt beatae laboriosam nesciunt quam dolor dolorum nobis vero aperiam! In, consectetur, debitis voluptatibus dolore rerum quia eligendi dolorum sunt.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, velit incidunt beatae laboriosam nesciunt quam dolor dolorum nobis vero aperiam! In, consectetur, debitis voluptatibus dolore rerum quia eligendi dolorum sunt.</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, velit incidunt beatae laboriosam nesciunt quam dolor dolorum nobis vero aperiam! In, consectetur, debitis voluptatibus dolore rerum quia eligendi dolorum sunt.</p>
+		</div>
+
+		<div class="article-footer">
+			<p>You've got more time; go ahead and keep reading!</p>
+
+			<a data-role="button" data-inline="true" data-transition="slideup" href="#reader-next" class="next-article-button">
+				Next
+			</a>
+		</div>
+
+	</div>
+
+	<!--
+		SETTINGS
+	-->
+
+	<div data-role="page" id="settings">
+		<div data-role="header">
+			<a data-role="button" href="#reader" data-rel="back" class="ui-btn-left">
+				Done
+	        </a>
+
+			<h1>Settings</h1>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+
+			$('body').on('click', '.next-article-button', function(e){
+				var $currentPage = $('#reader');
+				var $nextPage = $currentPage.clone().attr('id','').insertAfter($currentPage);
+				$nextPage.find('h2').text('Article too')
+
+				$.mobile.changePage($nextPage, {
+					transition: 'slideup',
+				});
+
+				window.setTimeout(function(){
+					$currentPage.remove();
+				}, 1000);
+				$nextPage[0].id = 'reader';
+
+				e.preventDefault();
+			});
+
+		});
+	</script>
+
+</body>
+</html>
