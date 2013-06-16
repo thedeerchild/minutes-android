@@ -51,3 +51,48 @@ body {
 		text-shadow: 0 -1px 0 rgba(#000, 0.5);
 	}
 }
+
+.ui-controlgroup-controls {
+	.ui-radio-on {
+		background: $minty-green;
+		border-color: $minty-green;
+	}
+}
+
+.ui-listview {
+	border-radius: 4px;
+	overflow: hidden;
+
+	.ui-btn {
+		background: $minty-green;
+		border: 0;
+		
+		a {
+			text-shadow: none;
+		}
+	}
+}
+
+div.ui-slider {
+	background: #fff;
+	border-radius: 100px;
+	border: 0;
+	box-shadow: 0 2px 0 #333;
+	height: 10px;
+	width: 43%;
+	margin: 1em 28.5%;
+	
+	@media screen and (max-width: 500px) {
+		width: 60%;
+		margin: 1em 20%;
+	}
+}
+.ui-slider-handle {
+	background: $minty-green;
+	border-radius: 1000px;
+	box-shadow: none;
+	border: 0;
+}
+.ui-slider-input {
+	display: none !important;
+}

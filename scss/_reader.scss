@@ -20,6 +20,15 @@
 	}
 }
 
+// Alternate text size
+
+.reader-textsize-small .article-text p {
+	font-size: 0.8em;
+}
+.reader-textsize-large .article-text p {
+	font-size: 1.25em;
+}
+
 // Loading text before article appears
 .loading-text {
 	margin-top: 2em;

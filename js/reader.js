@@ -21,7 +21,7 @@ $(function(){
 
 	var initTimer = function(val) {
 		storage.setItem('timer', val);
-		console.log("Timer set at "+storage.getItem('timer'));
+		// console.log("Timer set at "+storage.getItem('timer'));
 
 		readingTimer = window.setInterval(function(){
 			// Decrement timer
@@ -65,8 +65,8 @@ $(function(){
 			token: window.localStorage.getItem('access_token'),
 		};
 		$.get(DOMAIN+'article.json', params, function(data, textStatus, jqXHR) {
-			console.log(data);
-			console.log("Found an article that's "+data.minutes+" minutes long with "+(storage.getItem('timer') / 1000 / 60)+" minutes left.");
+			// console.log(data);
+			// console.log("Found an article that's "+data.minutes+" minutes long with "+(storage.getItem('timer') / 1000 / 60)+" minutes left.");
 
 			// Fill in content
 			var content = $('#reader .article-text');
@@ -103,7 +103,7 @@ $(function(){
 		nextArticle();
 		e.preventDefault();
 	});
-	$('body').on('click', '.next-article-button', function(e) {
+	$('body').on('click', '.skip-article-button', function(e) {
 		nextArticle(true);
 		e.preventDefault();
 	});
@@ -114,5 +114,24 @@ $(function(){
 			$.mobile.changePage($('#home'));
 		}
 	});
+
+	// Set font size CSS on page ready
+	$(document).on('pageinit', '#reader', function(){
+		var size = $('input[name="textSize"]:checked').val();
+
+		$('#reader').addClass('reader-textsize-'+size);
+	});
+
+	// Saving/loading text size choice
+	$('input[name="textSize"]').change(function(){
+		window.localStorage.setItem('text-size', $(this).val());
+	});
+	$(document).ready(function(){
+		var size = window.localStorage.getItem('text-size');
+		if (size !== null) {
+			$('input[name="textSize"][value="'+size+'"]').prop('checked', true);
+		}
+	});
+
 
 });
