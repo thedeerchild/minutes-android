@@ -2,6 +2,7 @@ AUTH = {
 
 	domain: 'http://minutesreader.herokuapp.com/',
 	client: window.location.origin + window.location.pathname,
+  facebookAppID: '303868906401280',
 
 	getRequestToken: function() {
 		var url = 'http://minutesreader.herokuapp.com/auth/pocket/token.json';

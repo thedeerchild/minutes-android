@@ -78,6 +78,8 @@ $(function(){
 			// Show article footer/hide loading indicator
 			uiMore.show(0);
 			uiLoading.hide(0);
+
+      $(document).trigger('reader:load', data);
 		});
 	}
 

@@ -12,9 +12,11 @@
 	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
 	<script src="js/reader.js"></script>
 	<script src="js/auth.js"></script>
+	<script src="js/facebook.js"></script>
 </head> 
 
 <body>
+<div id="fb-root"></div>
 
 	<!--
 		HOME (TIME PICKER)
@@ -40,6 +42,14 @@
 	        <a class="start-reading-button" data-role="button" data-inline="true" data-transition="slide" href="#reader">
                 Start reading
             </a>
+
+          <div
+            class="fb-login-button"
+            data-show-faces="true"
+            data-width="200"
+            data-max-rows="1"
+            data-scope="publish_actions">
+          </div>
 		</div><!-- /content -->
 
 		<div data-role="footer">
