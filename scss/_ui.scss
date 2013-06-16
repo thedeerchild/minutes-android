@@ -1,25 +1,20 @@
-body {
-	max-width: 960px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 [data-role="page"] {
+	max-width: 1024px;
+	margin: auto;
 	background: url('../img/wavegrid.png');
 }
 
 .ui-header {
-	box-shadow: 0 2px 0 rgba($minty-green, 0.5);
+	// box-shadow: 0 2px 0 rgba($base-color, 0.5);
 	
 	h1 {
-		text-shadow: 0 -1px 0 rgba(#000, 0.5);
+		// text-shadow: 0 -1px 0 rgba(#000, 0.5);
 	}
 }
 
 .ui-bar-a {
 	border-color: transparent;
-	@include background(
-		linear-gradient(top, $minty-green, darken($minty-green, 10%)));
+	background: $base-color;
 		
 	.ui-btn {
 		@include transition-property(background);
@@ -28,10 +23,10 @@ body {
 		border-color: transparent;
 		border-radius: 4px;
 		box-shadow: inset 0 2px 2px rgba(#fff, 0.25);
-		background: darken($minty-green, 15%);
+		background: darken($base-color, 15%);
 		
 		&:hover {
-			background: darken($minty-green, 25%);
+			background: darken($base-color, 25%);
 			@include transition-property(background);
 			@include transition-duration(0.3s);
 		}
@@ -39,11 +34,11 @@ body {
 }
 
 .ui-btn-inline {
-	background: $minty-green;
-	border: darken($minty-green, 20%);
+	background: $base-color;
+	border: darken($base-color, 20%);
 	
 	&:hover {
-		background: darken($minty-green, 15%)
+		background: darken($base-color, 15%)
 	}
 	
 	.ui-btn-text {
@@ -54,8 +49,8 @@ body {
 
 .ui-controlgroup-controls {
 	.ui-radio-on {
-		background: $minty-green;
-		border-color: $minty-green;
+		background: $base-color;
+		border-color: $base-color;
 	}
 }
 
@@ -64,7 +59,7 @@ body {
 	overflow: hidden;
 
 	.ui-btn {
-		background: $minty-green;
+		background: $base-color;
 		border: 0;
 		
 		a {
@@ -73,26 +68,3 @@ body {
 	}
 }
 
-div.ui-slider {
-	background: #fff;
-	border-radius: 100px;
-	border: 0;
-	box-shadow: 0 2px 0 #333;
-	height: 10px;
-	width: 43%;
-	margin: 1em 28.5%;
-	
-	@media screen and (max-width: 500px) {
-		width: 60%;
-		margin: 1em 20%;
-	}
-}
-.ui-slider-handle {
-	background: $minty-green;
-	border-radius: 1000px;
-	box-shadow: none;
-	border: 0;
-}
-.ui-slider-input {
-	display: none !important;
-}
