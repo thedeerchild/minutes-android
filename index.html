@@ -10,8 +10,8 @@
 	<link rel="stylesheet" href="css/screen.css" />
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+	<script src="js/reader.js"></script>
 	<script src="js/auth.js"></script>
-	<script src="js/script.js"></script>
 </head> 
 
 <body>
@@ -47,9 +47,9 @@
 				Settings
 	        </a>
 
-			<h4>Page Footer</h4>
-		</div><!-- /footer -->
-	</div><!-- /page -->
+			<h4></h4>
+		</div>
+	</div>
 
 	<!--
 		SIGN IN
@@ -130,11 +130,71 @@
 
 	<div data-role="page" id="settings">
 		<div data-role="header">
-			<a data-role="button" href="#reader" data-rel="back" class="ui-btn-left">
+			<a data-role="button" href="#reader" data-rel="back" data-transition="slideup" class="ui-btn-left">
 				Done
 	        </a>
 
 			<h1>Settings</h1>
+		</div>
+
+		<div data-role="content">
+			
+			<!-- Font size -->
+			<div data-role="fieldcontain">
+	            <fieldset data-role="controlgroup" data-type="horizontal">
+	                <legend>
+	                    Font size
+	                </legend>
+	                <input id="radio1" name="" value="small" type="radio">
+	                <label for="radio1">
+	                    Small
+	                </label>
+	                <input id="radio2" name="" value="medium" type="radio">
+	                <label for="radio2">
+	                    Medium
+	                </label>
+	                <input id="radio3" name="" value="large" type="radio">
+	                <label for="radio3">
+	                    Large
+	                </label>
+	            </fieldset>
+	        </div>
+	        <!-- /Font size -->
+
+	        <!-- Misc -->
+			<ul data-role="listview" data-divider-theme="" data-inset="true">
+	            <li data-theme="a">
+	                <a href="#about" data-transition="slide">
+	                    About Minutes
+	                </a>
+	            </li>
+	        </ul>
+	        <!-- /Misc -->
+
+		</div>
+
+	</div>
+
+	<!--
+		ABOUT
+	-->
+
+	<div data-role="page" id="about">
+		<div data-role="header">
+			<a data-role="button" href="#settings" data-rel="back" data-transition="slide" class="ui-btn-left">
+				Back
+			</a>
+			<h1>About</h1>
+		</div>
+
+		<div data-role="content" class="about-text">
+			<p>Created by:</p>
+
+			<p>Justin Chines</p>
+			<p>Geoff Kimball</p>
+			<p>Chen Liang</p>
+			<p>Eric Morris</p>
+			<p>Elomar Souza</p>
 		</div>
 	</div>
 

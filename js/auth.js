@@ -1,9 +1,12 @@
 AUTH = {
 
+	domain: 'http://minutesreader.herokuapp.com/',
+	client: window.location.origin + window.location.pathname,
+
 	getRequestToken: function() {
 		var url = 'http://minutesreader.herokuapp.com/auth/pocket/token.json';
 		var params = {
-			uri: 'http://localhost:8888/minutes-android/%23auth',
+			uri: AUTH.client + '%23auth',
 		}
 
 		$.get(url, params, function(data, textStatus, jqXHR) {

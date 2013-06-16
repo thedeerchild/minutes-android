@@ -1,0 +1,11 @@
+.about-text {
+	p {
+		font-size: 1.25em;
+		text-align: center;
+		margin-bottom: 0.5em;
+		
+		&:first-child {
+			color: #666;
+		}
+	}
+}

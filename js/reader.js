@@ -1,33 +1,3 @@
-function encodeToParagraph(str) {
-    return str
-        .replace(/\r\n?/g,'\n')
-        // normalize newlines - I'm not sure how these
-        // are parsed in PC's. In Mac's they're \n's
-        .replace(/(^((?!\n)\s)+|((?!\n)\s)+$)/gm,'')
-        // trim each line
-        .replace(/(?!\n)\s+/g,' ')
-        // reduce multiple spaces to 2 (like in "a    b")
-        .replace(/^\n+|\n+$/g,'')
-        // trim the whole string
-        .replace(/[<>&"']/g,function(a) {
-        // replace these signs with encoded versions
-            switch (a) {
-                case '<'    : return '&lt;';
-                case '>'    : return '&gt;';
-                case '&'    : return '&amp;';
-                case '"'    : return '&quot;';
-                case '\''   : return '&apos;';
-            }
-        })
-        .replace(/\n{2,}/g,'</p><p>')
-        // replace 2 or more consecutive empty lines with these
-        .replace(/\n/g,'<br />')
-        // replace single newline symbols with the <br /> entity
-        .replace(/^(.+?)$/,'<p>$1</p>');
-        // wrap all the string into <p> tags
-        // if there's at least 1 non-empty character
-}
-
 $(function(){
 
 	DOMAIN = 'http://minutesreader.herokuapp.com/';
@@ -75,12 +45,18 @@ $(function(){
 		console.log("Time's up!");
 	}
 
-	var loadArticle = function(reader) {
-		// Find the reader
+	var loadArticle = function(reader, save) {
 		if (typeof reader === 'undefined') var reader = $('#reader');
+		if (typeof save === 'undefined') var save = false;
+		if (save === true) articleID = 0;
+		else articleID = window.localStorage.getItem('current_article');
 
 		// Delete old content
 		reader.find('.article-text').empty();
+
+		// Hide article footer/show loading indicator
+		var uiMore = reader.find('.article-footer').hide(0);
+		var uiLoading = reader.find('.loading-text').show(0);
 
 		// Ask for new content
 		var params = {
@@ -89,16 +65,23 @@ $(function(){
 			token: window.localStorage.getItem('access_token'),
 		};
 		$.get(DOMAIN+'article.json', params, function(data, textStatus, jqXHR) {
+			console.log(data);
 			console.log("Found an article that's "+data.minutes+" minutes long with "+(storage.getItem('timer') / 1000 / 60)+" minutes left.");
 
 			// Fill in content
 			var content = $('#reader .article-text');
 			$('<h2 />', {text: data.title}).appendTo(content);
 			$(data.content).appendTo(content);
+
+			window.localStorage.setItem('current_article', data.id);
+
+			// Show article footer/hide loading indicator
+			uiMore.show(0);
+			uiLoading.hide(0);
 		});
 	}
 
-	var nextArticle = function() {
+	var nextArticle = function(skip) {
 		var $currentPage = $('#reader');
 		var $nextPage = $currentPage.clone().attr('id','').insertAfter($currentPage);
 
@@ -111,12 +94,25 @@ $(function(){
 		}, 1000);
 		$nextPage[0].id = 'reader';
 
-		loadArticle($nextPage);
+		if (typeof skip === 'undefined') var skip = false;
+		loadArticle($nextPage, skip);
 	}
 
+	// Click events for next/skip buttons
 	$('body').on('click', '.next-article-button', function(e) {
 		nextArticle();
 		e.preventDefault();
+	});
+	$('body').on('click', '.next-article-button', function(e) {
+		nextArticle(true);
+		e.preventDefault();
+	});
+
+	// If the reader is loaded as the initial page, go back to the home screen
+	$(document).on('pageinit', '#reader', function(){
+		if (window.localStorage.getItem('timer') === null) {
+			$.mobile.changePage($('#home'));
+		}
 	});
 
 });

@@ -1,6 +1,5 @@
+// Article header + body
 .article-text {
-	padding: 0 1em;
-
 	h2 {
 		color: $minty-green;
 		font-size: 2em;
@@ -9,10 +8,58 @@
 		line-height: 120%;
 		max-width: 75%;
 		font-weight: 200;
+		
+		@media screen and (max-width: 768px) {
+			margin: 0.75em auto 1em auto;
+		}
 	}
 
 	p {
 		line-height: 140%;
 		margin-bottom: 1em;
+	}
+}
+
+// Loading text before article appears
+.loading-text {
+	margin-top: 2em;
+	text-align: center;
+	font-size: 1.1em;
+	color: #666;
+}
+
+// Footer shown after article
+.article-footer {
+	max-width: 600px;
+	margin: 2em auto 0 auto;
+	padding-top: 2em;
+	border-top: 1px solid #999;
+	text-align: center;
+	
+	p {
+		margin-bottom: 1em;
+	}
+}
+
+// Embedded video
+.article-text > iframe {
+	margin-left: auto;
+	margin-right: auto;
+	
+	// Dimmensions
+	width: 640px;
+	height: 360px;
+	
+	@media screen and (max-width: 640px) {
+		width: 500px;
+		height: 281px;
+	}
+	@media screen and (max-width: 500px) {
+		width: 400px;
+		height: 225px;
+	}
+	@media screen and (max-width: 400px) {
+		width: 320px;
+		height: 180px;
 	}
 }

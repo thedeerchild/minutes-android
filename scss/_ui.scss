@@ -1,0 +1,53 @@
+body {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+[data-role="page"] {
+	background: url('../img/wavegrid.png');
+}
+
+.ui-header {
+	box-shadow: 0 2px 0 rgba($minty-green, 0.5);
+	
+	h1 {
+		text-shadow: 0 -1px 0 rgba(#000, 0.5);
+	}
+}
+
+.ui-bar-a {
+	border-color: transparent;
+	@include background(
+		linear-gradient(top, $minty-green, darken($minty-green, 10%)));
+		
+	.ui-btn {
+		@include transition-property(background);
+		@include transition-duration(0.3s);
+
+		border-color: transparent;
+		border-radius: 4px;
+		box-shadow: inset 0 2px 2px rgba(#fff, 0.25);
+		background: darken($minty-green, 15%);
+		
+		&:hover {
+			background: darken($minty-green, 25%);
+			@include transition-property(background);
+			@include transition-duration(0.3s);
+		}
+	}
+}
+
+.ui-btn-inline {
+	background: $minty-green;
+	border: darken($minty-green, 20%);
+	
+	&:hover {
+		background: darken($minty-green, 15%)
+	}
+	
+	.ui-btn-text {
+		color: white;
+		text-shadow: 0 -1px 0 rgba(#000, 0.5);
+	}
+}
