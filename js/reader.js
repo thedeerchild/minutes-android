@@ -123,15 +123,20 @@ $(function(){
 		e.preventDefault();
 	});
 
-	// Set font size CSS on page ready
-	$(document).on('pageinit', '#reader', function(){
-		var size = $('input[name="textSize"]:checked').val();
-		$('#reader').addClass('reader-textsize-'+size);
-	});
+	/*  ===============
+		READER SETTINGS
+		===============
+	*/
 
-	// Saving/loading text size choice
+	// Text size
 	$('input[name="textSize"]').change(function(){
-		window.localStorage.setItem('text-size', $(this).val());
+		var size = $('input[name="textSize"]:checked').val();
+
+		window.localStorage.setItem('text-size', size);
+		$('#reader')
+			.removeClass('reader-textsize-small reader-textsize-medium reader-textsize-large')
+			.addClass('reader-textsize-'+size);
+
 	});
 	$(document).ready(function(){
 		var size = window.localStorage.getItem('text-size');
@@ -139,6 +144,9 @@ $(function(){
 			$('input[name="textSize"][value="'+size+'"]').prop('checked', true);
 		}
 	});
+
+
+	// ----------
 
 	$(document).on('pageinit', '#home', function(){
 		killTimer();
