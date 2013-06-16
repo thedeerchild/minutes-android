@@ -167,69 +167,73 @@ body {
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
+/* line 45, ../scss/_ui.scss */
+.ui-bar-a [data-icon="delete"] {
+  display: none;
+}
 
-/* line 49, ../scss/_ui.scss */
+/* line 52, ../scss/_ui.scss */
 .ui-header .ui-btn-up-a,
 .ui-header .ui-btn-hover-a {
   height: 100%;
   width: 3em;
   top: 0;
 }
-/* line 54, ../scss/_ui.scss */
+/* line 57, ../scss/_ui.scss */
 .ui-header .ui-btn-up-a.ui-btn.settings-btn,
 .ui-header .ui-btn-hover-a.ui-btn.settings-btn {
   background: center center url(../img/settings.png) no-repeat;
   right: 0;
 }
-/* line 57, ../scss/_ui.scss */
+/* line 60, ../scss/_ui.scss */
 .ui-header .ui-btn-up-a.ui-btn.settings-btn:hover,
 .ui-header .ui-btn-hover-a.ui-btn.settings-btn:hover {
   background-color: #47aba6;
 }
-/* line 62, ../scss/_ui.scss */
+/* line 65, ../scss/_ui.scss */
 .ui-header .ui-btn-up-a.ui-btn.back-btn,
 .ui-header .ui-btn-hover-a.ui-btn.back-btn {
   background: center center url(../img/back.png) no-repeat;
   left: 0;
 }
-/* line 66, ../scss/_ui.scss */
+/* line 69, ../scss/_ui.scss */
 .ui-header .ui-btn-up-a.ui-btn.back-btn:hover,
 .ui-header .ui-btn-hover-a.ui-btn.back-btn:hover {
   background-color: #47aba6;
 }
 
-/* line 72, ../scss/_ui.scss */
+/* line 75, ../scss/_ui.scss */
 .ui-btn-inline {
   background: #66bfbb;
   border: #388783;
 }
-/* line 76, ../scss/_ui.scss */
+/* line 79, ../scss/_ui.scss */
 .ui-btn-inline:hover {
   background: #409995;
 }
-/* line 80, ../scss/_ui.scss */
+/* line 83, ../scss/_ui.scss */
 .ui-btn-inline .ui-btn-text {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 89, ../scss/_ui.scss */
+/* line 92, ../scss/_ui.scss */
 .ui-controlgroup-controls .ui-radio-on {
   background: #66bfbb;
   border-color: #66bfbb;
 }
 
-/* line 95, ../scss/_ui.scss */
+/* line 98, ../scss/_ui.scss */
 .ui-listview {
   border-radius: 4px;
   overflow: hidden;
 }
-/* line 99, ../scss/_ui.scss */
+/* line 102, ../scss/_ui.scss */
 .ui-listview .ui-btn {
   background: #66bfbb;
   border: 0;
 }
-/* line 103, ../scss/_ui.scss */
+/* line 106, ../scss/_ui.scss */
 .ui-listview .ui-btn a {
   text-shadow: none;
 }
