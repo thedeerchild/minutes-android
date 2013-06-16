@@ -13,6 +13,7 @@
 	<script src="js/reader.js"></script>
 	<script src="js/auth.js"></script>
 	<script src="js/facebook.js"></script>
+	<script src="js/timepick.js"></script>
 </head> 
 
 <body>
@@ -28,15 +29,15 @@
 			<h1>Minutes</h1>
 		</div><!-- /header -->
 
-		<div data-role="content">	
-			<p>How much time do you have?</p>
+		<div data-role="content" class="timepick">	
+			<p class="howmuch">How much time do you have?</p>
 
 			<div class="time-picker-clock">
-				
+				<p class="min-count"><b>15</b> min</p>
 			</div>
 
 			<div data-role="fieldcontain">
-	            <input id="time-slider" type="range" name="slider" value="15" min="0" max="30" step="1" data-highlight="false">
+	            <input id="time-slider" type="range" name="slider" value="15" min="5" max="30" step="5" data-highlight="false">
 	        </div>
 
 	        <a class="start-reading-button" data-role="button" data-inline="true" data-transition="slide" href="#reader">
@@ -108,9 +109,9 @@
 	<div data-role="page" id="reader">
 		
 		<div data-role="header">
-			<a data-role="button" href="#reader" class="ui-btn-right">
+			<!-- <a data-role="button" href="#reader" class="ui-btn-right skip-article-button">
 				Skip
-	        </a>
+	        </a> -->
 	        <a data-role="button" href="#home" data-transition="slide" data-rel="back" class="ui-btn-left">
 	            Back
 	        </a>
@@ -155,15 +156,15 @@
 	                <legend>
 	                    Font size
 	                </legend>
-	                <input id="radio1" name="" value="small" type="radio">
+	                <input id="radio1" name="textSize" value="small" type="radio">
 	                <label for="radio1">
 	                    Small
 	                </label>
-	                <input id="radio2" name="" value="medium" type="radio">
+	                <input id="radio2" name="textSize" value="medium" type="radio" checked>
 	                <label for="radio2">
 	                    Medium
 	                </label>
-	                <input id="radio3" name="" value="large" type="radio">
+	                <input id="radio3" name="textSize" value="large" type="radio">
 	                <label for="radio3">
 	                    Large
 	                </label>
