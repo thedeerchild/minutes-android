@@ -82,6 +82,7 @@ $(function(){
 			token: '08bd1ab3-7915-4b94-72e4-da6ed6',
 		};
 		$.get(DOMAIN+'article.json', params, function(data, textStatus, jqXHR) {
+			// Find the reader
 			var reader = $('#reader');
 
 			var content = $('<div />', {class: 'article-text'});
