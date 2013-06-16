@@ -320,7 +320,7 @@ div.ui-slider {
 
 /* line 2, ../scss/_reader.scss */
 .article-text {
-  max-width: 768px;
+  max-width: 40em;
   margin-left: auto;
   margin-right: auto;
 }
@@ -342,21 +342,78 @@ div.ui-slider {
 }
 /* line 21, ../scss/_reader.scss */
 .article-text p {
-  line-height: 140%;
   margin-bottom: 1em;
 }
 
-/* line 29, ../scss/_reader.scss */
+/* line 27, ../scss/_reader.scss */
+.reader-textsize-extrasmall .article-text p {
+  font-size: 0.8em;
+}
+
+/* line 28, ../scss/_reader.scss */
 .reader-textsize-small .article-text p {
   font-size: 0.8em;
 }
 
-/* line 32, ../scss/_reader.scss */
+/* line 29, ../scss/_reader.scss */
+.reader-textsize-medium .article-text p {
+  font-size: 1em;
+}
+
+/* line 30, ../scss/_reader.scss */
 .reader-textsize-large .article-text p {
-  font-size: 1.25em;
+  font-size: 1.2em;
+}
+
+/* line 31, ../scss/_reader.scss */
+.reader-textsize-extralarge .article-text p {
+  font-size: 1.4em;
+}
+
+/* line 33, ../scss/_reader.scss */
+.reader-background-light .article-text {
+  background-color: #fff;
+  color: #555;
+}
+
+/* line 34, ../scss/_reader.scss */
+.reader-background-medium .article-text {
+  background-color: #fff;
+  color: #555;
+}
+
+/* line 35, ../scss/_reader.scss */
+.reader-background-dark .article-text {
+  background-color: #333;
+  color: #ddd;
 }
 
 /* line 37, ../scss/_reader.scss */
+.reader-line-regular .article-text p {
+  line-height: 1.1;
+}
+
+/* line 38, ../scss/_reader.scss */
+.reader-line-tall .article-text p {
+  line-height: 1.4;
+}
+
+/* line 40, ../scss/_reader.scss */
+.reader-width-small .article-text {
+  max-width: 35em;
+}
+
+/* line 41, ../scss/_reader.scss */
+.reader-width-medium .article-text {
+  max-width: 40em;
+}
+
+/* line 42, ../scss/_reader.scss */
+.reader-width-large .article-text {
+  max-width: 45em;
+}
+
+/* line 46, ../scss/_reader.scss */
 .loading-text {
   margin-top: 2em;
   text-align: center;
@@ -364,7 +421,7 @@ div.ui-slider {
   color: #666;
 }
 
-/* line 45, ../scss/_reader.scss */
+/* line 54, ../scss/_reader.scss */
 .article-footer {
   max-width: 600px;
   margin: 2em auto 0 auto;
@@ -372,12 +429,12 @@ div.ui-slider {
   border-top: 1px solid #999;
   text-align: center;
 }
-/* line 52, ../scss/_reader.scss */
+/* line 61, ../scss/_reader.scss */
 .article-footer p {
   margin-bottom: 1em;
 }
 
-/* line 58, ../scss/_reader.scss */
+/* line 67, ../scss/_reader.scss */
 .article-text > iframe {
   margin-left: auto;
   margin-right: auto;
@@ -385,21 +442,21 @@ div.ui-slider {
   height: 360px;
 }
 @media screen and (max-width: 640px) {
-  /* line 58, ../scss/_reader.scss */
+  /* line 67, ../scss/_reader.scss */
   .article-text > iframe {
     width: 500px;
     height: 281px;
   }
 }
 @media screen and (max-width: 500px) {
-  /* line 58, ../scss/_reader.scss */
+  /* line 67, ../scss/_reader.scss */
   .article-text > iframe {
     width: 400px;
     height: 225px;
   }
 }
 @media screen and (max-width: 400px) {
-  /* line 58, ../scss/_reader.scss */
+  /* line 67, ../scss/_reader.scss */
   .article-text > iframe {
     width: 320px;
     height: 180px;
