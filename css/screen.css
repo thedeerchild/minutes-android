@@ -68,16 +68,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
   background: url("../img/wavegrid.png") !important;
+  font-size: 18px;
 }
 
-/* line 13, ../scss/screen.scss */
+/* line 14, ../scss/screen.scss */
 .ui-page[data-role="page"] {
   width: 100%;
   max-width: 940px;
   position: relative;
 }
 @media screen and (min-width: 600px) {
-  /* line 13, ../scss/screen.scss */
+  /* line 14, ../scss/screen.scss */
   .ui-page[data-role="page"] {
     width: 90%;
     margin: 0 auto;
@@ -89,13 +90,13 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
-  /* line 27, ../scss/screen.scss */
+  /* line 28, ../scss/screen.scss */
   .ui-mobile-viewport {
     width: 940px;
     margin: 0 auto;
   }
 
-  /* line 31, ../scss/screen.scss */
+  /* line 32, ../scss/screen.scss */
   .ui-page {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     width: 1024px !important;
@@ -103,7 +104,7 @@ body {
     position: relative !important;
   }
 
-  /* line 37, ../scss/screen.scss */
+  /* line 38, ../scss/screen.scss */
   .ui-mobile-viewport-transitioning, .ui-overlay-a {
     box-shadow: none;
   }
@@ -478,7 +479,7 @@ div.ui-slider {
   font-size: 0.9em;
 }
 
-/* line 60, ../scss/screen.scss */
+/* line 61, ../scss/screen.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
