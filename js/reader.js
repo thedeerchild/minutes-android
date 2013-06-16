@@ -22,8 +22,8 @@ $(function(){
 	var initTimer = function(val) {
 		storage.setItem('timer', val);
 
-		$('.article-footer p').text('Your time\'s about up! Have a good day.');
-		$('.article-footer .ui-btn-text').text('Finish');
+		$('.article-footer p').text('You\'ve got more time; go ahead and keep reading!');
+		$('.article-footer .ui-btn-text').text('Next');
 
 		readingTimer = window.setInterval(function(){
 			// Decrement timer
@@ -46,8 +46,8 @@ $(function(){
 	var timeUpAlert = function() {
 		console.log("Time's up!");
 
-		$('.article-footer p').text('You\'ve got more time; go ahead and keep reading!');
-		$('.article-footer .ui-btn-text').text('Next');
+		$('.article-footer p').text('Your time\'s about up! Have a good day.');
+		$('.article-footer .ui-btn-text').text('Finish');
 	}
 	var killTimer = function() {
 		window.clearInterval(readingTimer);
@@ -123,17 +123,9 @@ $(function(){
 		e.preventDefault();
 	});
 
-	// If the reader is loaded as the initial page, go back to the home screen
-	$(document).on('pageinit', '#reader', function(){
-		if (window.localStorage.getItem('timer') === null) {
-			$.mobile.changePage($('#home'));
-		}
-	});
-
 	// Set font size CSS on page ready
 	$(document).on('pageinit', '#reader', function(){
 		var size = $('input[name="textSize"]:checked').val();
-
 		$('#reader').addClass('reader-textsize-'+size);
 	});
 
@@ -150,6 +142,10 @@ $(function(){
 
 	$(document).on('pageinit', '#home', function(){
 		killTimer();
+	});
+
+	$(document).unload(function(){
+		document.localStorage.setItem('timer', null);
 	});
 
 

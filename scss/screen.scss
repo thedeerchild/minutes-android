@@ -34,6 +34,9 @@ body {
 		margin: 0 auto !important;
 		position: relative !important;
 	}
+	.ui-mobile-viewport-transitioning, .ui-overlay-a {
+		box-shadow: none;
+	}
 }
 
 @import "ui";

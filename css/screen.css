@@ -102,8 +102,18 @@ body {
     margin: 0 auto !important;
     position: relative !important;
   }
+
+  /* line 37, ../scss/screen.scss */
+  .ui-mobile-viewport-transitioning, .ui-overlay-a {
+    box-shadow: none;
+  }
 }
-/* line 4, ../scss/_ui.scss */
+/* line 2, ../scss/_ui.scss */
+#auth p, #signin p {
+  text-align: center;
+}
+
+/* line 9, ../scss/_ui.scss */
 .ui-header h1.ui-title {
   text-shadow: none;
   font-size: 2em;
@@ -113,18 +123,18 @@ body {
   min-height: 0;
 }
 
-/* line 14, ../scss/_ui.scss */
+/* line 19, ../scss/_ui.scss */
 .ui-bar-a {
   border: 0;
   background: #66bfbb;
 }
-/* line 18, ../scss/_ui.scss */
+/* line 23, ../scss/_ui.scss */
 .ui-bar-a.ui-footer {
   position: absolute;
   bottom: 0;
   width: 100%;
 }
-/* line 25, ../scss/_ui.scss */
+/* line 30, ../scss/_ui.scss */
 .ui-bar-a .ui-btn {
   -webkit-transition-property: background;
   -moz-transition-property: background;
@@ -145,7 +155,7 @@ body {
   box-shadow: none;
   background-color: #66bfbb;
 }
-/* line 33, ../scss/_ui.scss */
+/* line 38, ../scss/_ui.scss */
 .ui-bar-a .ui-btn:hover {
   background: #317572;
   -webkit-transition-property: background;
@@ -158,68 +168,68 @@ body {
   transition-duration: 0.3s;
 }
 
-/* line 44, ../scss/_ui.scss */
+/* line 49, ../scss/_ui.scss */
 .ui-header .ui-btn-up-a,
 .ui-header .ui-btn-hover-a {
   height: 100%;
   width: 3em;
   top: 0;
 }
-/* line 49, ../scss/_ui.scss */
+/* line 54, ../scss/_ui.scss */
 .ui-header .ui-btn-up-a.ui-btn.settings-btn,
 .ui-header .ui-btn-hover-a.ui-btn.settings-btn {
   background: center center url(../img/settings.png) no-repeat;
   right: 0;
 }
-/* line 52, ../scss/_ui.scss */
+/* line 57, ../scss/_ui.scss */
 .ui-header .ui-btn-up-a.ui-btn.settings-btn:hover,
 .ui-header .ui-btn-hover-a.ui-btn.settings-btn:hover {
   background-color: #47aba6;
 }
-/* line 57, ../scss/_ui.scss */
+/* line 62, ../scss/_ui.scss */
 .ui-header .ui-btn-up-a.ui-btn.back-btn,
 .ui-header .ui-btn-hover-a.ui-btn.back-btn {
   background: center center url(../img/back.png) no-repeat;
   left: 0;
 }
-/* line 61, ../scss/_ui.scss */
+/* line 66, ../scss/_ui.scss */
 .ui-header .ui-btn-up-a.ui-btn.back-btn:hover,
 .ui-header .ui-btn-hover-a.ui-btn.back-btn:hover {
   background-color: #47aba6;
 }
 
-/* line 67, ../scss/_ui.scss */
+/* line 72, ../scss/_ui.scss */
 .ui-btn-inline {
   background: #66bfbb;
   border: #388783;
 }
-/* line 71, ../scss/_ui.scss */
+/* line 76, ../scss/_ui.scss */
 .ui-btn-inline:hover {
   background: #409995;
 }
-/* line 75, ../scss/_ui.scss */
+/* line 80, ../scss/_ui.scss */
 .ui-btn-inline .ui-btn-text {
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* line 84, ../scss/_ui.scss */
+/* line 89, ../scss/_ui.scss */
 .ui-controlgroup-controls .ui-radio-on {
   background: #66bfbb;
   border-color: #66bfbb;
 }
 
-/* line 90, ../scss/_ui.scss */
+/* line 95, ../scss/_ui.scss */
 .ui-listview {
   border-radius: 4px;
   overflow: hidden;
 }
-/* line 94, ../scss/_ui.scss */
+/* line 99, ../scss/_ui.scss */
 .ui-listview .ui-btn {
   background: #66bfbb;
   border: 0;
 }
-/* line 98, ../scss/_ui.scss */
+/* line 103, ../scss/_ui.scss */
 .ui-listview .ui-btn a {
   text-shadow: none;
 }
@@ -407,7 +417,7 @@ div.ui-slider {
   font-size: 0.9em;
 }
 
-/* line 57, ../scss/screen.scss */
+/* line 60, ../scss/screen.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
