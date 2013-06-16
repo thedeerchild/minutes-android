@@ -134,7 +134,7 @@ $(function(){
 
 		window.localStorage.setItem('text-size', size);
 		$('#reader')
-			.removeClass('reader-textsize-small reader-textsize-medium reader-textsize-large')
+			.removeClass('eader-textsize-extrasmall reader-textsize-small reader-textsize-medium reader-textsize-large reader-textsize-extralarge')
 			.addClass('reader-textsize-'+size);
 
 	});
@@ -142,6 +142,49 @@ $(function(){
 		var size = window.localStorage.getItem('text-size');
 		if (size !== null) {
 			$('input[name="textSize"][value="'+size+'"]').prop('checked', true);
+			$('#reader')
+				.removeClass('eader-textsize-extrasmall reader-textsize-small reader-textsize-medium reader-textsize-large reader-textsize-extralarge')
+				.addClass('reader-textsize-'+size);
+		}
+	});
+
+// Line height
+	$('input[name="lineheight"]').change(function(){
+		var color = $('input[name="lineheight"]:checked').val();
+
+		window.localStorage.setItem('lineheight', color);
+		$('#reader')
+			.removeClass('reader-lineheight-short reader-lineheight-regular reader-lineheight-tall')
+			.addClass('reader-lineheight-'+color);
+
+	});
+	$(document).ready(function(){
+		var color = window.localStorage.getItem('lineheight');
+		if (color !== null) {
+			$('input[name="lineheight"][value="'+color+'"]').prop('checked', true);
+			$('#reader')
+				.removeClass('reader-lineheight-short reader-lineheight-regular reader-lineheight-tall')
+				.addClass('reader-lineheight-'+color);
+		}
+	});
+
+	// Font Style
+	$('input[name="font"]').change(function(){
+		var color = $('input[name="font"]:checked').val();
+
+		window.localStorage.setItem('font', color);
+		$('#reader')
+			.removeClass('reader-font-sans reader-font-serif')
+			.addClass('reader-font-'+color);
+
+	});
+	$(document).ready(function(){
+		var color = window.localStorage.getItem('lineheight');
+		if (color !== null) {
+			$('input[name="font"][value="'+color+'"]').prop('checked', true);
+			$('#reader')
+				.removeClass('reader-font-sans reader-font-serif')
+				.addClass('reader-font-'+color);
 		}
 	});
 
