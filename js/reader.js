@@ -69,7 +69,7 @@ $(function(){
 		// Ask for new content
 		var params = {
 			minutes: storage.getItem('timer') / 1000 / 60,
-			current: 10,
+			current: window.localStorage.getItem('current_article'),
 			token: window.localStorage.getItem('access_token'),
 		};
 		$.get(DOMAIN+'article.json', params, function(data, textStatus, jqXHR) {
