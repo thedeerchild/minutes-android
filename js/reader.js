@@ -21,7 +21,9 @@ $(function(){
 
 	var initTimer = function(val) {
 		storage.setItem('timer', val);
-		// console.log("Timer set at "+storage.getItem('timer'));
+
+		$('.article-footer p').text('Your time\'s about up! Have a good day.');
+		$('.article-footer .ui-btn-text').text('Finish');
 
 		readingTimer = window.setInterval(function(){
 			// Decrement timer
@@ -44,8 +46,8 @@ $(function(){
 	var timeUpAlert = function() {
 		console.log("Time's up!");
 
-		$('.article-footer p').text('Your time\'s about up! Have a good day.');
-		$('.article-footer .ui-btn-text').text('Finish');
+		$('.article-footer p').text('You\'ve got more time; go ahead and keep reading!');
+		$('.article-footer .ui-btn-text').text('Next');
 	}
 	var killTimer = function() {
 		window.clearInterval(readingTimer);
